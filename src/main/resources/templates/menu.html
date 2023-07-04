@@ -1,0 +1,50 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>献立一覧</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+	<div style="text-align: right;">
+	<a  id="TOP" href="#" class="btn-sticky" onclick="history.back()">戻る</a>
+
+	</div>
+	<div style="text-align: center;">
+		<h1 id=modoru>『<span th:text="${session.mood}"></span>』気分</h1>
+		<p>そんなあなたにおすすめな献立はこちら</p>
+		<div class="example">
+			<div class="table-responsive">
+				<div class="table-responsive-sm">
+					<div th:each="Reshipi:${session.menuInfo}">
+						<table class="table">
+							<tr>
+								<td th:text="${Reshipi.menuName}"></td>
+							</tr>
+							<td><img th:src="${Reshipi.menuImg}" width=250px height=250px>
+								<ul>
+									<li> 調理時間： <span th:text="${Reshipi.cookTime}"></span>分</li>
+									<li> カロリー： <span th:text="${Reshipi.calorie}"></span>kcal</li>
+									<li> 費　　用： <span th:text="${Reshipi.cost}"></span>円</li>
+								</ul>
+								<a th:href="@{'/ShowReshipiDetail?menuCd='+${Reshipi.menuCd}}">レシピはこちら</a><br>
+							</td>
+						</table>
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+</script>
+		
+	</script>
+</body>
+
+</html>
