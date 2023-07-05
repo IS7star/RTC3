@@ -26,8 +26,9 @@ public class ReshipiForm {
 
 	private String mood;
 	
-//	感情識別
+//	感情分析
 	private Integer emotionCd;
+	
 	private String emotion;
 
 }

@@ -86,7 +86,7 @@ public class SearchReshipiService {
 		//searchReshipiInfoにあるmenuCdで、レシピテーブル情報を検索して格納
 		List<Reshipi> reshipiList = searchReshipiRepository.findByEmotioncd(searchReshipiInfo.getEmotionCd());
 		//取得した値を"reshipiList"キーのセッションに格納
-		session.setAttribute("reshipiList", reshipiList);
+		session.setAttribute("menuInfoEmotion", reshipiList);
 	}
 }
 

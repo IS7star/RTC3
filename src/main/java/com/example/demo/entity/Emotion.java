@@ -19,7 +19,7 @@ public class Emotion {
 	
 	@Id
 	@Column(name = "emotion_cd")
-	private Integer emotion_Cd;
+	private Integer emotionCd;
 	
 	@Column(name = "emotion")
 	private String emotion;
