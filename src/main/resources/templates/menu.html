@@ -16,7 +16,12 @@
 
 	</div>
 	<div style="text-align: center;">
-		<h1 id=modoru>『<span th:text="${session.mood}"></span>』気分</h1>
+		<th:block  th:if="${error} != null">
+			<h1 id=modoru>『<span th:text="${session.mood}"></span>』気分</h1>
+		</th:block>
+		<th:block  th:if="${error} == null">
+			<h1>やったね！</h1>
+		</th:block>
 		<p>そんなあなたにおすすめな献立はこちら</p>
 		<div class="example">
 			<div class="table-responsive">
@@ -27,6 +32,7 @@
 								<td th:text="${Reshipi.menuName}"></td>
 							</tr>
 							<td><img th:src="${Reshipi.menuImg}" width=250px height=250px>
+							
 								<ul>
 									<li> 調理時間： <span th:text="${Reshipi.cookTime}"></span>分</li>
 									<li> カロリー： <span th:text="${Reshipi.calorie}"></span>kcal</li>
