@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Reshipi;
 import com.example.demo.form.ReshipiForm;
+import com.example.demo.repository.SearchEmotionRepository;
 import com.example.demo.repository.SearchMoodRepository;
 import com.example.demo.repository.SearchReshipiRepository;
 
@@ -24,6 +25,7 @@ import lombok.AllArgsConstructor;
 public class SearchReshipiService {
 
 	private final SearchMoodRepository searchMoodRepository;
+	private final SearchEmotionRepository searchEmotionRepository;
 	private final SearchReshipiRepository searchReshipiRepository;
 	private final HttpSession session;
 
@@ -65,6 +67,24 @@ public class SearchReshipiService {
 		ReshipiForm searchReshipiInfo = (ReshipiForm) session.getAttribute("menuCd");
 		//searchReshipiInfoにあるmenuCdで、レシピテーブル情報を検索して格納
 		List<Reshipi> reshipiList = searchReshipiRepository.findByMenucd(searchReshipiInfo.getMenuCd());
+		//取得した値を"reshipiList"キーのセッションに格納
+		session.setAttribute("reshipiList", reshipiList);
+	}
+	
+	public void getEmotioncdByEmotion() {
+		//セッション"MoodCd"のmoodCd(気分コード)をsearchMoodに格納
+		ReshipiForm searchEmotionCd = (ReshipiForm) session.getAttribute("emotion");
+		//searchMoodにあるmoodCdで、mood(気分名)を検索して格納
+		Integer emotionCd = searchEmotionRepository.findEmotioncdByEmotion(searchEmotionCd.getEmotion());
+		//取得した値を"Mood"キーのセッションに格納
+		session.setAttribute("emotionCd", emotionCd);
+	}
+	
+	public void getReshipiInfoByEmotioncd() {
+		//セッション"menuInfo"のmenuCd(献立コード)をsearchReshipiInfoに格納
+		ReshipiForm searchReshipiInfo = (ReshipiForm) session.getAttribute("emotionCd");
+		//searchReshipiInfoにあるmenuCdで、レシピテーブル情報を検索して格納
+		List<Reshipi> reshipiList = searchReshipiRepository.findByEmotioncd(searchReshipiInfo.getEmotionCd());
 		//取得した値を"reshipiList"キーのセッションに格納
 		session.setAttribute("reshipiList", reshipiList);
 	}

@@ -30,6 +30,9 @@ private String menuName;
 @Column(name = "mood_cd")
 private Integer moodCd;
 
+@Column(name = "emotion_cd")
+private Integer emotionCd;
+
 @Column(name = "menu_img")
 private String menuImg;
 

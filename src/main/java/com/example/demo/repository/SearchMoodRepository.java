@@ -27,4 +27,3 @@ public interface SearchMoodRepository extends JpaRepository<Mood, Integer> {
 	String findMoodByMoodcd(@Param("moodCd") Integer moodCd);
 
 }
-

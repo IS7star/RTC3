@@ -40,5 +40,19 @@ public interface SearchReshipiRepository extends JpaRepository<Reshipi, Integer>
 			+ " WHERE menu_cd=:menuCd", nativeQuery = true)
 	List<Reshipi> findByMenucd(Integer menuCd);
 
+	/**
+	 * 感情コードからレシピテーブル情報を検索する
+	 * 
+	 * @param emotionCd
+	 * @return レシピテーブルのemotionCdが一致する全カラム
+	 */
+	
+	@Query(value = "SELECT * "
+			+ " FROM T_RESHIPI "
+			+ " WHERE emotion_cd=:emotionCd", nativeQuery = true)
+	List<Reshipi> findByEmotioncd(Integer emotionCd);
+
 }
+	
+
 
