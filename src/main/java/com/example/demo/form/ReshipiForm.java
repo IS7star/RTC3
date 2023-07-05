@@ -11,11 +11,7 @@ public class ReshipiForm {
 	private String menuName;
 
 	private Integer moodCd;
-	
-	private Integer emotionCd;
-
-	private String emotion;
-	
+		
 	private String menuImg;
 
 	private String food;
