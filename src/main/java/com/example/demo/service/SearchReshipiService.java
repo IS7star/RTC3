@@ -82,6 +82,8 @@ public class SearchReshipiService {
 		ReshipiForm searchEmotionCd = (ReshipiForm) session.getAttribute("emotion");
 		//searchEmotionCdにあるemotionで、emotionCd(感情コード)を検索して格納
 		Integer emotionCd = searchEmotionRepository.findEmotioncdByEmotion(searchEmotionCd.getEmotion());
+		//
+		session.setAttribute("emotionCd", emotionCd);
 		//emotionCdにあるemotionCdで、レシピテーブル情報を検索して格納
 		List<Reshipi> reshipiList = searchReshipiRepository.findByEmotioncd(emotionCd);
 		//取得した値を"menuInfo"キーのセッションに格納

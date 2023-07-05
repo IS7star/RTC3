@@ -19,10 +19,21 @@
 		<th:block  th:if="${error} != null">
 			<h1 id=modoru>『<span th:text="${session.mood}"></span>』気分</h1>
 		</th:block>
-		<th:block  th:if="${error} == null">
-			<h1>やったね！</h1>
+		<th:block  th:if="${session.emotionCd} == 1">
+			<h1>ぽじ</h1>
 		</th:block>
-		<p>そんなあなたにおすすめな献立はこちら</p>
+				<th:block  th:if="${session.emotionCd} == 2">
+			<h1>ねが</h1>
+		</th:block>
+				</th:block>
+				<th:block  th:if="${session.emotionCd} == 3">
+			<h1>ふつう</h1>
+		</th:block>
+				</th:block>
+				<th:block  th:if="${session.emotionCd} == 4">
+			<h1>みっくす</h1>
+		</th:block>
+		<p>あなたにおすすめな献立はこちら</p>
 		<div class="example">
 			<div class="table-responsive">
 				<div class="table-responsive-sm">
