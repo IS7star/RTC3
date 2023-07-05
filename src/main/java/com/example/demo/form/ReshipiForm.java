@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class ReshipiForm {
 
+//　献立一覧
 	private Integer menuCd;
 
 	private String menuName;
@@ -28,6 +29,10 @@ public class ReshipiForm {
 	private Integer cost;
 
 	private String mood;
+	
+//	感情識別
+	private Integer emotionCd;
+	private String emotion;
 
 }
 

@@ -13,7 +13,12 @@
 	<div>
 		<h1>今日の気分は？</h1>
 		<p>気分に合わせた献立をご提案します。</p>
+		
+		<h4>今の気分を入力してください。</h4>
+			<input type="text"placeholder="○○な気分"id="inputText" />
+			<button onclick="fetchData()">送信</button>
 		<table style="border: none; background: none">
+			
 			<tr>
 				<td>がっつり</td>
 				<td>あっさり</td>
@@ -56,6 +61,58 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+	<script>
+	function fetchData() {
+		var inputText = document.getElementById("inputText").value;
+		const data = {
+			kind: "SentimentAnalysis",
+			parameters: {
+				modelVersion: "latest",
+				opinionMining: "False"
+			},
+			analysisInput: {
+				documents: [
+					{
+						id: "1",
+						language: "ja",
+						text: inputText
+					}
+				]
+			}
+		};
+			// HTMLのボタン要素にイベントリスナーを追加する
+			const button = document.querySelector('button');
+			button.addEventListener('click', fetchData);
+			fetch('https://test20230629abe.cognitiveservices.azure.com/language/:analyze-text?api-version=2023-04-01', {
+			method: 'POST',
+			headers: {
+				'Ocp-Apim-Subscription-Key': 'c60a6b97f8f444d4ae314ae621a08862',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		})
+		.then(response => response.json())
+		.then(data => {
+			const valueToPost  = data.results.documents[0].sentiment;
+			
+			const form = document.createElement('form');
+			form.action = '/emotionInput'; // POSTリクエストを送信するURL
+      		form.method = 'POST';
+      		
+      		const input = document.createElement('input');
+      		input.type = 'hidden';
+      		input.name = 'emotion'; // POSTデータのキー
+      		input.value = valueToPost; // POSTデータの値
+		
+			form.appendChild(input);
+	        document.body.appendChild(form);	
+			form.submit(); // フォームを自動的に送信（submit）する		
+		})
+		.catch(error => {
+			console.log(data);
+		});
+	}
+</script>
 </body>
 	
 </html>
