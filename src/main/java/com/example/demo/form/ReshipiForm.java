@@ -2,6 +2,11 @@ package com.example.demo.form;
 
 import lombok.Data;
 
+/**
+ * 献立情報に対応するフォームです。
+ * @author hirono
+ * @version 1.0
+ */
 @Data
 public class ReshipiForm {
 

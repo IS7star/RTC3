@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 /**
- * 感情識別テーブルのエンティティ
+ * 感情分析テーブルのエンティティ
  * @author 櫻井樹
  * @version 1.0
  */

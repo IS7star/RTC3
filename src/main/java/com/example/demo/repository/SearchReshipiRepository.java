@@ -30,7 +30,6 @@ public interface SearchReshipiRepository extends JpaRepository<Reshipi, Integer>
 
 	/**
 	 * 献立コードからレシピテーブル情報を検索する
-	 * 
 	 * @param menuCd
 	 * @return レシピテーブルのmenuCdが一致する全カラム
 	 */
@@ -42,7 +41,6 @@ public interface SearchReshipiRepository extends JpaRepository<Reshipi, Integer>
 
 	/**
 	 * 感情コードからレシピテーブル情報を検索する
-	 * 
 	 * @param emotionCd
 	 * @return レシピテーブルのemotionCdが一致する全カラム
 	 */
@@ -50,7 +48,7 @@ public interface SearchReshipiRepository extends JpaRepository<Reshipi, Integer>
 	@Query(value = "SELECT * "
 			+ " FROM T_RESHIPI "
 			+ " WHERE emotion_cd=:emotionCd", nativeQuery = true)
-	List<Reshipi> findByEmotioncd(Integer emotionCd);
+	List<Reshipi> findByEmotioncd(@Param("emotionCd")Integer emotionCd);
 
 }
 	

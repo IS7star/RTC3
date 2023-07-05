@@ -71,22 +71,21 @@ public class SearchReshipiService {
 		session.setAttribute("reshipiList", reshipiList);
 	}
 	
-	public void getEmotioncdByEmotion() {
-		//セッション"MoodCd"のmoodCd(気分コード)をsearchMoodに格納
-		ReshipiForm searchEmotionCd = (ReshipiForm) session.getAttribute("emotion");
-		//searchMoodにあるmoodCdで、mood(気分名)を検索して格納
-		Integer emotionCd = searchEmotionRepository.findEmotioncdByEmotion(searchEmotionCd.getEmotion());
-		//取得した値を"Mood"キーのセッションに格納
-		session.setAttribute("emotionCd", emotionCd);
-	}
+	/**
+	 * レシピテーブル情報の全カラムを取得してセッションに格納するメソッド
+	 * ①WebAPIで取得したemotion(感情名)で、感情識別テーブルの感情コードを検索
+	 * ②①で取得した感情コードで、献立情報テーブルの全カラムを検索
+	 */
 	
-	public void getReshipiInfoByEmotioncd() {
-		//セッション"menuInfo"のmenuCd(献立コード)をsearchReshipiInfoに格納
-		ReshipiForm searchReshipiInfo = (ReshipiForm) session.getAttribute("emotionCd");
-		//searchReshipiInfoにあるmenuCdで、レシピテーブル情報を検索して格納
-		List<Reshipi> reshipiList = searchReshipiRepository.findByEmotioncd(searchReshipiInfo.getEmotionCd());
-		//取得した値を"reshipiList"キーのセッションに格納
-		session.setAttribute("menuInfoEmotion", reshipiList);
+	public void getReshipiEmotioncdByEmotion() {
+		//セッション"emotion"のemotion(感情名)をsearchEmotionCdに格納
+		ReshipiForm searchEmotionCd = (ReshipiForm) session.getAttribute("emotion");
+		//searchEmotionCdにあるemotionで、emotionCd(感情コード)を検索して格納
+		Integer emotionCd = searchEmotionRepository.findEmotioncdByEmotion(searchEmotionCd.getEmotion());
+		//emotionCdにあるemotionCdで、レシピテーブル情報を検索して格納
+		List<Reshipi> reshipiList = searchReshipiRepository.findByEmotioncd(emotionCd);
+		//取得した値を"menuInfo"キーのセッションに格納
+		session.setAttribute("menuInfo", reshipiList);
 	}
 }
 
