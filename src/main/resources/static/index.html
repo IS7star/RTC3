@@ -11,16 +11,18 @@
 
 <body style="text-align: center;">
 	<div>
-		<h1>感情に合わせた献立を<br/>ご提案します！</h1>
-		<h4>なんでも入力してください。</h4>
-		<input type="text" placeholder="○○な気分" id="inputText" />
-		<button onclick="fetchData()">送信</button>
-		<br/><br/><p></p><br/>
+		<h1>献立提案サービス</h1>
 
-		<h1>今日の気分は？</h1>
+	<!--感情分析による献立提案-->
+		<p>感情分析するよ！なんでも入力してね。</p>
+		<table><td>
+		<input type="text" placeholder="○○な気分" id="inputText" /><br>
+		<button class="button-red" onclick="fetchData()">送信</button>
+		</td></table>
+		<br><br>
 		<p>気分に合わせた献立をご提案します。</p>
 
-		<h4>今の気分を入力してください。</h4>
+	<!--気分選択による献立提案-->
 		<table style="border: none; background: none">
 			<tr>
 				<td>がっつり</td>

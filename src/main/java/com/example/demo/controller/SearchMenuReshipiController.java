@@ -53,7 +53,7 @@ public class SearchMenuReshipiController {
 		
 		//判定用にmoodTextに値を入れる ※1であれば献立検索時の文章を表示
 		mv.addObject("moodText", 1);
-		
+
 		//献立情報を取得・セッションに格納するサービスクラスのメソッドを実行
 		searchReshipiService.getMenunameByMoodcd();
 		//気分名を取得・セッションに格納するサービスクラスのメソッドを実行
@@ -68,7 +68,7 @@ public class SearchMenuReshipiController {
 	 * @param emotionCd
 	 * @param mv
 	 * @return menu (献立一覧画面)
-	 */
+	 */ 
 	
 	@PostMapping("/emotionInput")
 	public ModelAndView showForm(@RequestParam("emotion") String emotion,ModelAndView mv) {
@@ -81,6 +81,7 @@ public class SearchMenuReshipiController {
 
 		//次画面のURLをセットする
 		mv.setViewName("menu");
+		
 		//ReshipiFormからemotion(WebAPIで取得した感情名)をreshipiFormに格納し、"emotion"キーのセッションに格納
 		ReshipiForm reshipiForm = new ReshipiForm();
 		reshipiForm.setEmotion(emotion);
@@ -88,7 +89,7 @@ public class SearchMenuReshipiController {
 
 		//判定用にmoodTextに値を入れる ※nullであれば献立検索時の文章を表示
 		mv.addObject("moodText", null);
-		
+
 		//レシピ情報を取得・セッションに格納するサービスクラスのメソッドを実行
 		searchReshipiService.getReshipiEmotioncdByEmotion();
 		
