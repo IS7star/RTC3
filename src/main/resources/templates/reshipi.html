@@ -17,7 +17,13 @@
 
 	<div style="text-align: center;">
 		<h1><span th:text="${Reshipi.menuName}"></span></h1>
-		<p>『<span th:text="${session.mood}"></span>』気分のあなたにおすすめレシピ</p>
+<!--		<th:block  th:if="${moodText} != null">-->
+<!--		<p id=modoru>『<span th:text="${session.mood}"></span>』気分のおすすめレシピ</p>-->
+<!--		</th:block>-->
+<!--		<th:block  th:if="${session.emotionCd} == 1">-->
+<!--		<p>今日も1日お疲れさまでした。&#x1f60a;</p>-->
+<!--		</th:block>-->
+<p></p>
 		<table>
 			<tr>
 				<th><span th:text="${Reshipi.menuName}"></span></th>

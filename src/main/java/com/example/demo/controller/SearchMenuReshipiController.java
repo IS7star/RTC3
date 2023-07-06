@@ -50,7 +50,9 @@ public class SearchMenuReshipiController {
 		ReshipiForm reshipiForm = new ReshipiForm();
 		reshipiForm.setMoodCd(moodCd);
 		session.setAttribute("moodCd", reshipiForm);
-		mv.addObject("error", 1);
+		
+		//判定用にmoodTextに値を入れる ※1であれば献立検索時の文章を表示
+		mv.addObject("moodText", 1);
 		
 		//献立情報を取得・セッションに格納するサービスクラスのメソッドを実行
 		searchReshipiService.getMenunameByMoodcd();
@@ -83,7 +85,9 @@ public class SearchMenuReshipiController {
 		ReshipiForm reshipiForm = new ReshipiForm();
 		reshipiForm.setEmotion(emotion);
 		session.setAttribute("emotion", reshipiForm);
-		mv.addObject("error", null);
+
+		//判定用にmoodTextに値を入れる ※nullであれば献立検索時の文章を表示
+		mv.addObject("moodText", null);
 		
 		//レシピ情報を取得・セッションに格納するサービスクラスのメソッドを実行
 		searchReshipiService.getReshipiEmotioncdByEmotion();
