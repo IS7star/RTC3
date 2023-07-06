@@ -16,30 +16,24 @@
 
 	</div>
 	<div style="text-align: center;">
-					
-			<th:block  th:if="${moodText} != null">
+		<th:block  th:if="${error} != null">
 			<h1 id=modoru>『<span th:text="${session.mood}"></span>』気分</h1>
-			</th:block>
-		
-		<div th:if="${moodText} == null">
-			<th:block  th:if="${session.emotionCd} == 1">
-				<h1>今日も1日お疲れさまでした。&#x1f60a;</h1>
-			</th:block>
-					<th:block  th:if="${session.emotionCd} == 2">
-				<h1>元気出してね &#x1f606;</h1>
-			</th:block>
-					</th:block>
-					<th:block  th:if="${session.emotionCd} == 3">
-				<h1>今日も1日お疲れ！明日も頑張っていこう。&#x1f604;</h1>
-			</th:block>
-					</th:block>
-					<th:block  th:if="${session.emotionCd} == 4">
-				<h1>切り替えが大事！&#x1f609;</h1>
-			</th:block>
-
-	</div>
-		<p>おすすめの献立はこちら</p>
-
+		</th:block>
+		<th:block  th:if="${session.emotionCd} == 1">
+			<h1>良い一日でしたね！ &#x1f60a;</h1>
+		</th:block>
+				<th:block  th:if="${session.emotionCd} == 2">
+			<h1>元気出してね！ &#x1f606;</h1>
+		</th:block>
+		</th:block>
+				<th:block  th:if="${session.emotionCd} == 3">
+			<h1>平凡な一日でもいいじゃない！ &#x1f604;</h1>
+		</th:block>
+		</th:block>
+				<th:block  th:if="${session.emotionCd} == 4">
+			<h1>すごい一日だったね！ &#x1f609;</h1>
+		</th:block>
+		<p>あなたにおすすめな献立はこちら</p>
 		<div class="example">
 			<div class="table-responsive">
 				<div class="table-responsive-sm">
@@ -68,6 +62,8 @@
 </script>
 		
 	</script>
+	
+	
 </body>
 
 </html>
