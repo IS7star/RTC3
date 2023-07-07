@@ -44,13 +44,6 @@ h2 {
 
 }
 
-h5 {
-	padding: 10px 15px;
-	text-align: center;
-	margin-left: 30px;
-	margin-right: 30px;
-}
-
 .width-large {
 	width: 300px;
 }
@@ -208,7 +201,7 @@ a.btn_18 {
 	border: 3px solid #27acd9;
 	box-shadow: 5px 5px #27acd9;
 	transition: 0.3s ease-in-out;
-} 
+}
 
 a.btn_18:hover {
 	box-shadow: none;
@@ -218,6 +211,7 @@ a.btn_18:hover {
 
 #buttonImage1 {
 	background-image: url('../img/gatturi.png');
+	background-color: rgb(255, 162, 162);
 	background-size: contain;
 	background-position: center;
 	display: inline-block;
@@ -235,6 +229,7 @@ a.btn_18:hover {
 
 #buttonImage2 {
 	background-image: url('../img/assari.png');
+	background-color: #c0e2ee;
 	background-size: contain;
 	background-position: center;
 	display: inline-block;
@@ -252,6 +247,7 @@ a.btn_18:hover {
 
 #buttonImage3 {
 	background-image: url('../img/kodomo.png');
+	background-color: rgb(207, 236, 203);
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -270,6 +266,7 @@ a.btn_18:hover {
 
 #buttonImage4 {
 	background-image: url('../img/osyare.png');
+	background-color: rgb(243, 255, 140);
 	background-size: contain;
 	background-position: center;
 	display: inline-block;
@@ -287,6 +284,7 @@ a.btn_18:hover {
 
 #buttonImage5 {
 	background-image: url('../img/jitan.png');
+	background-color: rgb(245, 174, 241);
 	background-size: contain;
 	background-position: center;
 	display: inline-block;
@@ -304,6 +302,7 @@ a.btn_18:hover {
 
 #buttonImage6 {
 	background-image: url('../img/daietto.png');
+	background-color: rgb(114, 238, 114);
 	background-size: contain;
 	background-position: center;
 	display: inline-block;
@@ -412,6 +411,7 @@ a.btn_18:hover {
 
 #buttonImage6-sumaho {
 	background-image: url('../img/daietto.png');
+	background-color: rgb(114, 238, 114);
 	background-size: contain;
 	background-position: center;
 	display: inline-block;
@@ -624,4 +624,56 @@ button#submit1.is-active {
 }
 .tab-switch {
   display: none;
+}
+/*コンテナの数を調整 09Sample*/
+
+
+.sidebar {
+    background-color: #EEEEEE;
+}
+
+.content {
+    background-color: #FFEEEE;
+    border: 1px solid #333333;
+    height: 150px;
+}
+
+.bottom {
+    text-align: center;
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+
+
+.area {
+    background-color: azure;
+    border: 1px solid blue;
+    height: 100px;
+}
+
+/*22*/
+.navbar-img {
+    height: 30px;
+}
+
+.sidebar-header {
+    font-size: 18px;
+    border-bottom: 1px solid #444444;
+}
+
+h1 {
+    text-align: center;
+    border-top: 1px solid #444444;
+    border-bottom: 1px solid #444444;
+    padding: 10px 0 10px 0;
+}
+
+.image-container {
+	display: flex;
+	align-items: center;
+}
+
+.text {
+	margin-left: 10px;
 }
