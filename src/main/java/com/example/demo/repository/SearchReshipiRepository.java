@@ -50,6 +50,13 @@ public interface SearchReshipiRepository extends JpaRepository<Reshipi, Integer>
 			+ " WHERE emotion_cd=:emotionCd", nativeQuery = true)
 	List<Reshipi> findByEmotioncd(@Param("emotionCd")Integer emotionCd);
 
+	/**
+	 * 感情コードからランダムでレシピテーブル情報1つを抽出する
+	 * @param emotionCd
+	 * @return レシピテーブルのemotionCdが一致する全カラム
+	 */
+	@Query(value = "SELECT * from t_RESHIPI where emotion_cd=:emotionCd ORDER BY random() LIMIT 1", nativeQuery = true)
+	List<Reshipi> findLandumByEmotioncd(@Param("emotionCd")Integer emotionCd);
 }
 	
 
