@@ -13,6 +13,7 @@
 </head>
 
 <body>
+	<br>
 	<div style="text-align: center;">
 		<h1>献立提案サービス</h1>
 		<div class="tab-wrap">
@@ -21,15 +22,15 @@
 			<div class="tab-content">
 
 				<!--感情分析による献立提案-->
-				<p>感情分析するよ！なんでも入力してね。</p>
+				<h6>感情分析結果から<br>お勧めの献立をいくつか提案するよ</h6>
 				<input type="text/css" placeholder="例：551の豚まんがあるとき！”" class="form-control control" id="inputText" maxlength="20"
 					required autocomplete="off" /><br>
 				<button id="submit1" onclick="fetchData()" name="my_submit" class="my_submit_btn"
 					value="signup">送信</button>
 				<br><br><br><br>
 
-				<p>感情分析結果からあなたにお勧めな献立を紹介するよ</p>
-				<input type="text/css" placeholder="例：疲れを癒してほしい気分”" class="form-control control" id="inputText2" maxlength="20"
+				<h6>感情分析結果から<br>お勧めの献立を1つ提案するよ</h6>
+				<input type="text/css" placeholder="例：疲れを癒してほしい気分" class="form-control control" id="inputText2" maxlength="20"
 					required autocomplete="off" /><br>
 				<button id="submit2" onclick="fetchData2()" name="my_submit" class="my_submit_btn"
 					value="signup">送信</button>
@@ -39,7 +40,7 @@
 			<div class="tab-content" id="back">
 
 				<!--気分選択による献立提案-->
-				<p>気分に合わせた献立をご提案します。</p>
+				<h6>気分に合わせた献立を提案するよ</h6>
 
 				<div class="pc-content">
 					<div class="container d-none d-sm-block">

@@ -10,7 +10,7 @@
 	<title>献立一覧</title>
 </head>
 <body>
-
+<br>
 <!--コンテナ-->
 <div class="container">
 	<div style="text-align: right;">
@@ -41,7 +41,8 @@
 
 		<div class="row">
 			<div class="top">
-				<p>あなたにおすすめな献立はこちら</p>
+				<h6>あなたにおすすめの献立はこちら</h6>
+				<br>
 			</div>
 		</div>
 
@@ -52,7 +53,7 @@
 			<div class="row">
 				<div class="col-12 col-sm-6 col-md-4" th:each="Reshipi: ${session.menuInfo}">
 					<div class="d-flex flex-column">
-						<p th:text="${Reshipi.menuName}"></p>
+						<h6 th:text="${Reshipi.menuName}"></h6>
 						<img th:src="${Reshipi.menuImg}" class="img-fluid" />
 						<div class="d-sm-block d-md-none">
 							<p>調理時間：<span th:text="${Reshipi.cookTime}"></span>分</p>
