@@ -136,18 +136,21 @@
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
 		<script>
-			//必須入力チェック処理
+		//必須入力チェック処理
 			const inputText = document.getElementById("inputText")
 			const button = document.getElementById("submit1")
+			
 			button.disabled = true;
 			button.classList.add('is-inactive');
-
+			
 			inputText.addEventListener("input", update)
 			inputText.addEventListener("change", update)
-
+			
 			function update() {
 
 				const isRequired = inputText.checkValidity()
+				
+				
 				if (isRequired) {
 					button.disabled = false;
 					button.classList.remove('is-inactive');
@@ -157,6 +160,33 @@
 					button.disabled = true;
 					button.classList.remove('is-active');
 					button.classList.add('is-inactive');
+				}
+				
+				
+			}
+			 
+			const button2 = document.getElementById("submit2")
+			const inputText2 = document.getElementById("inputText2")
+			
+			button2.disabled = true;
+			button2.classList.add('is-inactive');
+	
+			inputText2.addEventListener("input", update2)
+			inputText2.addEventListener("change", update2)
+			
+			function update2() {
+				
+				const isRequired2 = inputText2.checkValidity();
+				
+				if (isRequired2) {
+					button2.disabled = false;
+					button2.classList.remove('is-inactive');
+					button2.classList.add('is-active');
+					return
+				} else {
+					button2.disabled = true;
+					button2.classList.remove('is-active');
+					button2.classList.add('is-inactive');
 				}
 			}
 			function fetchData() {
@@ -211,7 +241,61 @@
 						console.log(data);
 					});
 			}
+			
+			function fetchData2() {
+				var inputText = document.getElementById("inputText2").value;
+				const data = {
+					kind: "SentimentAnalysis",
+					parameters: {
+						modelVersion: "latest",
+						opinionMining: "False"
+					},
+					analysisInput: {
+						documents: [
+							{
+								id: "1",
+								language: "ja",
+								text: inputText
+							}
+						]
+					}
+				};
+				// HTMLのボタン要素にイベントリスナーを追加する
+				const button = document.querySelector('button');
+				button.addEventListener('click', fetchData2);
+
+				fetch('https://test20230629abe.cognitiveservices.azure.com/language/:analyze-text?api-version=2023-04-01', {
+					method: 'POST',
+					headers: {
+						'Ocp-Apim-Subscription-Key': 'c60a6b97f8f444d4ae314ae621a08862',
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(data)
+				})
+					.then(response => response.json())
+					.then(data => {
+						const valueToPost = data.results.documents[0].sentiment;
+
+						const form = document.createElement('form');
+						form.action = '/emotionSerch'; // POSTリクエストを送信するURL
+						form.method = 'POST';
+
+						const input = document.createElement('input');
+						input.type = 'hidden';
+						input.name = 'emotion'; // POSTデータのキー
+						input.value = valueToPost; // POSTデータの値
+
+
+						form.appendChild(input);
+						document.body.appendChild(form);
+						form.submit(); // フォームを自動的に送信（submit）する		
+					})
+					.catch(error => {
+						console.log(data);
+					})
+				}
 		</script>
+
 </body>
 
 </html>
