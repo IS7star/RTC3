@@ -81,7 +81,7 @@ public class SearchReshipiService {
 		//セッション"emotion"のemotion(感情名)をsearchEmotionCdに格納
 		ReshipiForm searchEmotionCd = (ReshipiForm) session.getAttribute("emotion");
 		//searchEmotionCdにあるemotionで、emotionCd(感情コード)を検索して格納
-		Integer emotionCd = searchEmotionRepository.findEmotioncdByEmotion(searchEmotionCd.getEmotion());
+		Integer emotionCd = searchEmotionRepository.findEmotionCdByEmotion(searchEmotionCd.getEmotion());
 		//
 		session.setAttribute("emotionCd", emotionCd);
 		//emotionCdにあるemotionCdで、レシピテーブル情報を検索して格納
@@ -89,18 +89,18 @@ public class SearchReshipiService {
 		//取得した値を"menuInfo"キーのセッションに格納
 		session.setAttribute("menuInfo", reshipiList);
 	}
-		public void getReshipiByEmotion() {
-		//セッション"emotion"のemotion(感情名)をsearchEmotionCdに格納
-		ReshipiForm searchEmotionCd = (ReshipiForm) session.getAttribute("emotion");
-		//searchEmotionCdにあるemotionで、emotionCd(感情コード)を検索して格納
-		Integer emotionCd = searchEmotionRepository.findEmotioncdByEmotion(searchEmotionCd.getEmotion());
-		//セッション"emotionCd"のemotionCd(感情コード)をsearchEmotionCdに格納
-		session.setAttribute("emotionCd", emotionCd);
-		//emotionCdにあるemotionCdで、レシピテーブル情報を検索して格納
-		List<Reshipi> reshipiList = searchReshipiRepository.findLandumByEmotioncd(emotionCd);
-		//取得した値を"menuInfo"キーのセッションに格納
-		session.setAttribute("menuInfo", reshipiList);
-	}
+//		public void getReshipiByEmotion() {
+//		//セッション"emotion"のemotion(感情名)をsearchEmotionCdに格納
+//		ReshipiForm searchEmotionCd = (ReshipiForm) session.getAttribute("emotion");
+//		//searchEmotionCdにあるemotionで、emotionCd(感情コード)を検索して格納
+//		Integer emotionCd = searchEmotionRepository.findEmotioncdByEmotion(searchEmotionCd.getEmotion());
+//		//セッション"emotionCd"のemotionCd(感情コード)をsearchEmotionCdに格納
+//		session.setAttribute("emotionCd", emotionCd);
+//		//emotionCdにあるemotionCdで、レシピテーブル情報を検索して格納
+//		List<Reshipi> reshipiList = searchReshipiRepository.findLandumByEmotioncd(emotionCd);
+//		//取得した値を"menuInfo"キーのセッションに格納
+//		session.setAttribute("menuInfo", reshipiList);
+//	}
 }
 
 

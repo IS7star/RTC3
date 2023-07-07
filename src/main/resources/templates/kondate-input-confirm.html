@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>料理　登録画面</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
+
+<body style="text-align: center;">
+	<h1>献立提案システム</h1>
+	<h2>料理　登録確認画面 </h2>
+	<div>
+		<p>登録したい料理の情報を入力して下さい。</p>
+		<form action="kondateInputComplete" method="post">
+			<table>
+				<tr>
+					<th>料理名</th>
+					<td><span th:text="${session.newReshipi.menuName}"></span></td>
+				</tr>
+
+				<tr>
+					<th>気分名</th>
+					<td><span th:text="${session.newReshipi.mood}"></span></td>
+				</tr>
+
+				<tr>
+					<th>感情名</th>
+					<td><span th:text="${session.newReshipi.emotion}"></span></td>
+				</tr>
+
+				<tr>
+					<th>画像名</th>
+					<td><span th:text="${session.newReshipi.menuImg}"></span></td>
+				</tr>
+				<tr>
+					<th>材料</th>
+					<td><span th:text="${session.newReshipi.food}"></span></td>
+				</tr>
+				<tr>
+					<th>作り方</th>
+					<td><span th:text="${session.newReshipi.cookMethod}"></span></td>
+				</tr>
+				<tr>
+					<th>カロリー</th>
+					<td><span th:text="${session.newReshipi.calorie}"></span></td>
+				</tr>
+				<tr>
+					<th>調理時間</th>
+					<td><span th:text="${session.newReshipi.cookTime}"></span></td>
+				</tr>
+				<tr>
+					<th>費用</th>
+					<td><span th:text="${session.newReshipi.cost}"></span></td>
+				</tr>
+			</table>
+			<div class="controlbox">
+				<input type="submit" value="登録" class="button-red">
+				<a href="index.html" class="button">メニューに戻る</a>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>
