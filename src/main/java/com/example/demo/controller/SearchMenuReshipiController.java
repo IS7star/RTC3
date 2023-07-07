@@ -117,7 +117,7 @@ public class SearchMenuReshipiController {
 		mv.addObject("moodText", null);
 
 		//レシピ情報を取得・セッションに格納するサービスクラスのメソッドを実行
-		searchReshipiService.getReshipiEmotioncdByEmotion();
+		searchReshipiService.getReshipiByEmotion();
 		
 		//mvを返す
 		return mv;
