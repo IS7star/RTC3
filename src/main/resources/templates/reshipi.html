@@ -2,45 +2,39 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>献立詳細</title>
-	<link rel="stylesheet" type="text/css" href="css/common.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>献立詳細</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 
 <body th:each="Reshipi:${session.reshipiList}">
-	<div style="text-align: right;">
-		<a href="#" class="btn-sticky" onclick="history.back()">戻る</a>
-	</div>
+    <div style="text-align: right;">
+        <a href="#" class="btn-sticky" onclick="history.back()">戻る</a>
+    </div>
 
-	<div style="text-align: center;">
-		<h1><span th:text="${Reshipi.menuName}"></span></h1>
-<!--		<th:block  th:if="${moodText} != null">-->
-<!--		<p id=modoru>『<span th:text="${session.mood}"></span>』気分のおすすめレシピ</p>-->
-<!--		</th:block>-->
-<!--		<th:block  th:if="${session.emotionCd} == 1">-->
-<!--		<p>今日も1日お疲れさまでした。&#x1f60a;</p>-->
-<!--		</th:block>-->
-<p></p>
-		<table>
-			<tr>
-				<th><span th:text="${Reshipi.menuName}"></span></th>
-			</tr>
-			<td><img th:src="${Reshipi.menuImg}" width=600px height=400px></td>
-		</table>
-	</div>
-	<h2>材料名</h2>
-	<span th:text="${Reshipi.food}"></span>
+    <div style="text-align: center;">
+        <h1><span th:text="${Reshipi.menuName}"></span></h1>
+        <p></p>
+        <table>
+            <tr>
+                <th><span th:text="${Reshipi.menuName}"></span></th>
+            </tr>
+            <td><img class="responsive-image" th:src="${Reshipi.menuImg}" width=600px height=400px></td>
+        </table>
+    </div>
+    <h2>材料名</h2>
+    <p><span th:utext="${Reshipi.food.replace('\n', '<br>')}"></span></p>
 
-	<h2>作り方</h2>
-	<span th:text="${Reshipi.cookMethod}"></span>
-	<br>
-	<br>
-	<br>
-	<br>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <h2>作り方</h2>
+    <p><span th:utext="${Reshipi.cookMethod.replace('\n', '<br>')}"></span></p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
