@@ -570,7 +570,7 @@ button#submit1.is-active {
 }
 
 .control{
-  width:20%;
+  width: auto;
   margin: 0 auto;
   
 }
@@ -660,13 +660,6 @@ button#submit1.is-active {
 .sidebar-header {
     font-size: 18px;
     border-bottom: 1px solid #444444;
-}
-
-h1 {
-    text-align: center;
-    border-top: 1px solid #444444;
-    border-bottom: 1px solid #444444;
-    padding: 10px 0 10px 0;
 }
 
 .image-container {
