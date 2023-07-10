@@ -146,6 +146,31 @@ public class SearchMenuReshipiController {
 		//mvを返す
 		return mv;
 	}
+	
+	
+	@GetMapping("/ShowRecommendReshipi")
+	public ModelAndView showRecommendReshipi(@RequestParam("menuCd") Integer menuCd,ModelAndView mv) {
+
+		
+		//事前にレシピ検索していた場合、セッションの削除
+		session.removeAttribute("mood");
+		session.removeAttribute("menuInfo");
+		session.removeAttribute("menuCd");
+		session.removeAttribute("reshipiLiset");
+		
+		//次画面のURLをセットする
+		mv.setViewName("recommend-reshipi");
+		//ReshipiFormからmenuCd(献立コード)をreshipiFormに格納し、"menuCd"キーのセッションに格納
+		ReshipiForm reshipiForm = new ReshipiForm();
+		reshipiForm.setMenuCd(menuCd);
+		session.setAttribute("menuCd", reshipiForm);
+		
+		//献立情報を取得・セッションに格納するサービスクラスのメソッドを実行
+		searchReshipiService.getReshipiInfoByMenucd();
+
+		//mvを返す
+		return mv;
+	}
 }
 
 

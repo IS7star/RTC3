@@ -57,7 +57,10 @@ public interface SearchReshipiRepository extends JpaRepository<Reshipi, Integer>
 	 */
 	@Query(value = "SELECT * from t_RESHIPI where emotion_cd=:emotionCd ORDER BY random() LIMIT 1", nativeQuery = true)
 	List<Reshipi> findLandumByEmotioncd(@Param("emotionCd")Integer emotionCd);
-}
 	
+}
+
+
+
 
 
