@@ -55,7 +55,7 @@
 				<div class="col-12 col-sm-6 col-md-4" th:each="Reshipi: ${session.menuInfo}">
 					<div class="d-flex flex-column">
 						<h6 th:text="${Reshipi.menuName}"></h6>
-						<img th:src="${Reshipi.menuImg}" class="img-fluid" />
+						<img th:src="${Reshipi.menuImg}" class="img-fluid thumbnail"; target="_blank" />
 						<div class="d-sm-block d-md-none">
 							<p>調理時間：<span th:text="${Reshipi.cookTime}"></span>分</p>
 							<p>カロリー：<span th:text="${Reshipi.calorie}"></span>kcal</p>
