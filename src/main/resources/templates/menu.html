@@ -33,7 +33,7 @@
 				<h1>元気出してね！ &#x1f606;</h1>
 			</th:block>
 			<th:block th:if="${session.emotionCd} == 3">
-				<h1>美味しい料理で良い一日を！ &#x1f604;</h1>
+				<h1>美味活！元気ごはん！ &#x1f604;</h1>
 			</th:block>
 			<th:block th:if="${session.emotionCd} == 4">
 				<h1>すごい一日だったね！ &#x1f609;</h1>
@@ -55,7 +55,7 @@
 				<div class="col-12 col-sm-6 col-md-4" th:each="Reshipi: ${session.menuInfo}">
 					<div class="d-flex flex-column">
 						<h6 th:text="${Reshipi.menuName}"></h6>
-						<img th:src="${Reshipi.menuImg}" class="img-fluid" />
+						<img th:src="${Reshipi.menuImg}" class="img-fluid thumbnail"; target="_blank" />
 						<div class="d-sm-block d-md-none">
 							<p>調理時間：<span th:text="${Reshipi.cookTime}"></span>分</p>
 							<p>カロリー：<span th:text="${Reshipi.calorie}"></span>kcal</p>
