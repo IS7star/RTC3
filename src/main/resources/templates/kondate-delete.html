@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>削除献立検索</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
+
+<body style="text-align: center;">
+	<h1>献立提案システム</h1>
+	<h3>献立削除</h3>
+	<div>
+		<p>削除したい献立名を入力して下さい。</p>
+		<form action="kondateDelete" method="post" th:object="${kondateDeleteForm}">
+			<table class="table2">
+				<tr>
+					<th>料理名：</th>
+					<td><input type="text" placeholder="例：漢の牛丼" th:field="*{menuName}" id="inputText" class="width-middle"><br>
+						<font color="red"><span th:if="${#fields.hasErrors('menuName')}" th:errors="*{menuName}"></span>
+						</font>
+					</td>
+					<td><input type="reset" value="リセット"></td>
+				</tr>
+			</table>
+			<div class="controlbox">
+				<input type="submit" value="送信・検索一覧表示" class="button-red">
+			</div>
+
+		</form>
+	</div>
+</body>
+
+</html>
