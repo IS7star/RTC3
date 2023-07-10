@@ -571,7 +571,7 @@ button#submit2.is-active {
 }
 
 .control{
-  width: 20%;
+  width: auto;
   margin: 0 auto;
   
 }
