@@ -144,7 +144,7 @@ body {
 	margin: 0;
 	font-family: "Hannari";
 	color: #333;
-	background-image: url('../img/haikei.jpg');
+	background-image: url('../img/haikei3.jpg');
 	background-size: contain;
 	font-weight: bold;
 	margin-left: 30px;
@@ -834,6 +834,15 @@ button#submit2.is-active {
 .favorite-icon.active {
 	color: red;
 	/* アクティブ時の色 */
+}
+.thumbnail {
+    display: inline-block;
+    height: 300px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.thumbnail img {
+    height: 100%;
 }
 
 
