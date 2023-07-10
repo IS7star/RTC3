@@ -571,7 +571,7 @@ button#submit2.is-active {
 }
 
 .control{
-  width: auto;
+  width: 20%;
   margin: 0 auto;
   
 }
@@ -670,4 +670,13 @@ button#submit2.is-active {
 
 .text {
 	margin-left: 10px;
+}
+.thumbnail {
+    display: inline-block;
+    height: 300px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.thumbnail img {
+    height: 100%;
 }
