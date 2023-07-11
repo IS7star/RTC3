@@ -901,7 +901,8 @@ button#submit2.is-active {
     margin-bottom: 15px;
 }
 .thumbnail img {
-    height: 100%;
+　display: inline-block; 
+　height: 100%;
 }
 h1#midashi {
 	padding: 1rem 0;
