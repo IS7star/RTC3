@@ -930,10 +930,11 @@ h5{
     text-align: center;
 }
 #thumbnail img {
+　　display: inline-block;
     width: 100px;
-	height: 300px;
-	object-fit: cover;
-	aspect-ratio: 2 / 2.35;
+　　height: 300px;
+　　object-fit: cover;
+　　aspect-ratio: 2 / 2.35;
 }
 
 
