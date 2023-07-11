@@ -949,13 +949,15 @@ h5{
     font-size: 26px;
     text-align: center;
 }
-#thumbnail img {
-　　display: inline-block;
-    width: 100px;
-　　height: 300px;
-　　object-fit: cover;
-　　aspect-ratio: 2 / 2.35;
+#thumbnail {
+display: inline-block;
+width: 300px;
+height: 300px;
+object-fit: cover;
+aspect-ratio: 2 / 2.35;
 }
+
+
 
 
 
