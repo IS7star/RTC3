@@ -891,19 +891,7 @@ button#submit2.is-active {
 .text {
 	margin-left: 10px;
 }
-.thumbnail {
-    display: inline-block; 
-    width: 1000px;
-	height: auto;
-	object-fit: cover;
-	aspect-ratio: 2 / 1.35;
-}
-.thumbnail img {
-    width: 1000px;
-	height: auto;
-	object-fit: cover;
-	aspect-ratio: 2 / 1.35;
-}
+
 .favorite-icon {
 	cursor: pointer;
 	left: 10px;
@@ -920,8 +908,8 @@ button#submit2.is-active {
     margin-bottom: 15px;
 }
 .thumbnail img {
-　display: inline-block; 
-　height: 100%;
+display: inline-block; 
+height: 100%;
 }
 h1#midashi {
 	padding: 1rem 0;
