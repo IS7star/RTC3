@@ -63,9 +63,9 @@ public class SearchMenuReshipiController {
 	}
 	
 	/**
-	 * emotionCd(感情コード)をもとに対象となる献立一覧を表示するメソッド
-	 * 感情分析による献立提案システムで利用
-	 * @param emotionCd
+	 * emotion(感情名)をもとに対象となる献立一覧を表示するメソッド
+	 * 感情分析による献立提案システム（献立全件検索）で利用
+	 * @param emotion
 	 * @param mv
 	 * @return menu (献立一覧画面)
 	 */ 
@@ -96,6 +96,17 @@ public class SearchMenuReshipiController {
 		//mvを返す
 		return mv;
 	}
+	
+	
+	/**
+	 * emotion(感情名)をもとに対象となる献立一覧を表示するメソッド
+	 * 感情分析による献立提案システム（献立1件検索）で利用
+	 * @param emotion
+	 * @param mv
+	 * @return menu (献立一覧画面)
+	 */
+	
+	
 	@PostMapping("/emotionSerch")
 	public ModelAndView emoshionlist(@RequestParam("emotion") String emotion,ModelAndView mv) {
 		
@@ -146,7 +157,8 @@ public class SearchMenuReshipiController {
 		//mvを返す
 		return mv;
 	}
-
+	
+	
 	/**
 	 * 取得したmenuCdをもとに対象となる献立情報詳細を表示するメソッド
 	 * 一押しレシピ画面用
@@ -158,7 +170,6 @@ public class SearchMenuReshipiController {
 	@GetMapping("/ShowRecommendReshipi")
 	public ModelAndView showRecommendReshipi(@RequestParam("menuCd") Integer menuCd,ModelAndView mv) {
 
-		
 		//事前にレシピ検索していた場合、セッションの削除
 		session.removeAttribute("mood");
 		session.removeAttribute("menuInfo");
