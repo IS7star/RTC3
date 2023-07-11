@@ -14,6 +14,12 @@ import com.example.demo.entity.Reshipi;
 
 public interface KondateUpdateRepository extends JpaRepository<Reshipi, Integer>{
 
+	/**
+	 * メニューコードからレシピ情報を検索するメソッド
+	 * @param menuCd
+	 * @return レシピ情報
+	 */
+	
 	public Optional<Reshipi> findByMenuCd(Integer MenuCd);
 	
 	
