@@ -245,6 +245,28 @@ h3{padding: 0.5em;
 	vertical-align: middle;
 	white-space: nowrap;
 }
+.button-reset {
+	width: 150px;
+	background-color: #647071;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 1.4;
+	padding: 10px 40px;
+	text-align: center;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+	-moz-border-radius: 4px;
+	-moz-user-select: none;
+	-ms-touch-action: manipulation;
+	-ms-user-select: none;
+	-webkit-border-radius: 4px;
+	-webkit-user-select: none;
+}
 .button:hover {
 	background-color: #647071;
 }
