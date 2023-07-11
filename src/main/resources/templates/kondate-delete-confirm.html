@@ -19,38 +19,39 @@
 	</div>
 
 	<h2 style="color:#e94a0c">『<span th:text="${session.kondateDeleteForm.menuName}"></span>』の献立一覧</h2>
-		<div class="container">
-			<div class="row">
-				<div style="text-align: center;">
-					
-					<p>献立一覧から削除したい項目選び、『削除』を押してください。</p>
-					
-					<div class="col-12 col-sm-6 col-md-4" th:each="Reshipi: ${session.deleteReshipiList}">
-						<div class="d-flex flex-column">
-							<h6 th:text="${Reshipi.menuName}"></h6>
-							<img th:src="${Reshipi.menuImg}" class="img-fluid" />
-							<div class="d-sm-block d-md-none">
-								<p>調理時間：<span th:text="${Reshipi.cookTime}"></span>分</p>
-								<p>カロリー：<span th:text="${Reshipi.calorie}"></span>kcal</p>
-								<p>費用：<span th:text="${Reshipi.cost}"></span>円</p>
+
+	<div style="text-align: center;">
+		<p>献立一覧から削除したい項目選び、『削除』を押してください。</p>
+		<div class="container-fluid">
+			<div class="center-div">
+				<div class="container-fluid">
+					<div class="row justify-content-center">
+						<div class="col-12 col-sm-6 col-md-4" th:each="Reshipi: ${session.deleteReshipiList}">
+							<div class="d-flex flex-column">
+								<h6 th:text="${Reshipi.menuName}"></h6>
+								<img th:src="${Reshipi.menuImg}" class="img-fluid" />
+								<div class="d-sm-block d-md-none">
+									<p>調理時間：<span th:text="${Reshipi.cookTime}"></span>分</p>
+									<p>カロリー：<span th:text="${Reshipi.calorie}"></span>kcal</p>
+									<p>費用：<span th:text="${Reshipi.cost}"></span>円</p>
+								</div>
+								<div class="d-none d-md-block">
+									<p>調理時間：<span th:text="${Reshipi.cookTime}"></span>分</p>
+									<p>カロリー：<span th:text="${Reshipi.calorie}"></span>kcal</p>
+									<p>費用：<span th:text="${Reshipi.cost}"></span>円</p>
+								</div>
+								<a th:href="@{'/ShowReshipiDetailForDelete?menuCd=' + ${Reshipi.menuCd}}"
+									onclick="return confirm('本当に削除しますか？');">削除</a><br>
 							</div>
-							<div class="d-none d-md-block">
-								<p>調理時間：<span th:text="${Reshipi.cookTime}"></span>分</p>
-								<p>カロリー：<span th:text="${Reshipi.calorie}"></span>kcal</p>
-								<p>費用：<span th:text="${Reshipi.cost}"></span>円</p>
-							</div>
-							<a th:href="@{'/ShowReshipiDetailForDelete?menuCd=' + ${Reshipi.menuCd}}"
-								onclick="return confirm('本当に削除しますか？');">削除</a><br>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
+	</div>
 	<div class="row">
 		<div class="bottom"></div>
 	</div>
-
 	</div>
 	</div>
 

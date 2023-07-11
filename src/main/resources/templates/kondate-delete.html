@@ -11,6 +11,11 @@
 </head>
 
 <body style="text-align: center;">
+
+	<div style="text-align: right;">
+		<a id="TOP" href="#" class="btn-sticky" onclick="history.back()">戻る</a>
+	</div>
+
 	<h1>献立提案システム</h1>
 	<h2 style="color:#e94a0c">献立削除</h2>
 	<div>
@@ -19,7 +24,8 @@
 			<table class="table2">
 				<tr>
 					<th>料理名：</th>
-					<td><input type="text" placeholder="例：漢の牛丼" th:field="*{menuName}" id="inputText" class="width-middle"><br>
+					<td><input type="text" placeholder="例：漢の牛丼" th:field="*{menuName}" id="inputText"
+							class="width-middle"><br>
 						<font color="red"><span th:if="${#fields.hasErrors('menuName')}" th:errors="*{menuName}"></span>
 						</font>
 					</td>
