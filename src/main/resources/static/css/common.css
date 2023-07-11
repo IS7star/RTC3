@@ -131,14 +131,6 @@ main h1 {
   font-weight: 400;
   text-align: center;
 }
-/*============
-body
-=============*/
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-}
-
 
 body {
 	margin: 0;
@@ -169,21 +161,6 @@ h6 {
 	margin-left: 30px;
 	margin-right: 30px;
 	color: #e94a0c;
-}
-
-
-
-h1 {
-	padding: 0.5em;
-	/*文字周りの余白*/
-	color: #e94a0c;
-	/*文字色*/
-	background: #fffaf4;
-	/*背景色*/
-	border-left: solid 5px #ffaf58;
-	/*左線（実線 太さ 色）*/
-	font-weight: 600;
-
 }
 
 h2 {
@@ -864,6 +841,25 @@ button#submit2.is-active {
 }
 .thumbnail img {
     height: 100%;
+}
+h1#midashi {
+	padding: 1rem 0;
+    margin-bottom: 0.2rem;
+    background-image: linear-gradient(90deg, #74E1F5 0 25%, #F5D574 25% 50%, #74F590 50% 75%, #F57474 75%);
+    background-repeat: no-repeat;
+    background-size: 30% 0.3rem;
+    background-position: bottom;
+    color: #353535;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+.name {
+	color: #353535;
+	font-size: 26px;
+}
+.zairyo {
+	color: #353535;
+	font-size: 26px;
 }
 
 
