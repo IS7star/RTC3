@@ -72,7 +72,7 @@ public class SearchReshipiService {
 	}
 	
 	/**
-	 * レシピテーブル情報の全カラムを取得してセッションに格納するメソッド
+	 * レシピテーブル情報の全カラムを「」取得してセッションに格納するメソッド
 	 * ①WebAPIで取得したemotion(感情名)で、感情識別テーブルの感情コードを検索
 	 * ②①で取得した感情コードで、献立情報テーブルの全カラムを検索
 	 */
@@ -89,6 +89,13 @@ public class SearchReshipiService {
 		//取得した値を"menuInfo"キーのセッションに格納
 		session.setAttribute("menuInfo", reshipiList);
 	}
+	
+	
+	/**
+	 * レシピテーブル情報の全カラムを「1件」取得してセッションに格納するメソッド
+	 * ①WebAPIで取得したemotion(感情名)で、感情識別テーブルの感情コードを検索
+	 * ②①で取得した感情コードで、献立情報テーブルの全カラムを検索
+	 */
 		public void getReshipiByEmotion() {
 		//セッション"emotion"のemotion(感情名)をsearchEmotionCdに格納
 		ReshipiForm searchEmotionCd = (ReshipiForm) session.getAttribute("emotion");
