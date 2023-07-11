@@ -13,7 +13,7 @@
     <title>献立詳細</title>
 
 </head>
-<body th:each="Reshipi:${session.reshipiList}">
+<font th:each="Reshipi:${session.reshipiList}">
 <br>
     <div style="text-align: right;">
         <a id="TOP" href="#" class="btn-sticky" onclick="history.back()">戻る</a>
@@ -30,10 +30,10 @@
             <td><img class="responsive-image" th:src="${Reshipi.menuImg}" width=600px height=400px></td>
         </table>
     </div>
-    <h2　class="zairyo">材料名</h2>
+    <h2>材料名</h2>
     <p><span th:utext="${Reshipi.food.replace('\n', '<br>')}"></span></p>
 
-    <h2　class="zairyo">作り方</h2>
+    <h2>作り方</h2>
     <p><span th:utext="${Reshipi.cookMethod.replace('\n', '<br>')}"></span></p>
     <br>
     <br>
