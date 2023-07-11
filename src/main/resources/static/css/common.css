@@ -210,6 +210,7 @@ h3{padding: 0.5em;
 
 .button,
 .button-red {
+	width: 150px;
 	background-color: #95A5A6;
 	background-image: none;
 	border: 1px solid transparent;
@@ -223,28 +224,16 @@ h3{padding: 0.5em;
 	user-select: none;
 	vertical-align: middle;
 	white-space: nowrap;
+	margin-bottom: 10px;
 	-moz-border-radius: 4px;
 	-moz-user-select: none;
 	-ms-touch-action: manipulation;
 	-ms-user-select: none;
 	-webkit-border-radius: 4px;
 	-webkit-user-select: none;
+	
 }
-.button2{
-	background-color: #e74c3c;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	color: #fff;
-	cursor: pointer;
-	display: inline-block;
-	line-height: 1.4;
-	padding: 10px 40px;
-	text-align: center;
-	user-select: none;
-	vertical-align: middle;
-	white-space: nowrap;
-}
+
 .button-reset {
 	width: 150px;
 	background-color: #647071;
@@ -267,17 +256,59 @@ h3{padding: 0.5em;
 	-webkit-border-radius: 4px;
 	-webkit-user-select: none;
 }
+
+.button-red2 {
+	width: 250px;
+	background-color: #95A5A6;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 1.4;
+	padding: 10px 40px;
+	text-align: center;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+	-moz-border-radius: 4px;
+	-moz-user-select: none;
+	-ms-touch-action: manipulation;
+	-ms-user-select: none;
+	-webkit-border-radius: 4px;
+	-webkit-user-select: none;
+}
+
+.button2 {
+	background-color: #e74c3c;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 1.4;
+	padding: 10px 40px;
+	text-align: center;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
 .button:hover {
 	background-color: #647071;
 }
 
-.button-red {
+.button-red,
+.button-red2 {
 	background-color: #e74c3c;
 }
 
 .button-red:hover {
 	background-color: #c0392b;
 }
+
 
 #footer {
 	margin: 40px 0 0 0;
