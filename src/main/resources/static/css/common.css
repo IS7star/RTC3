@@ -327,6 +327,13 @@ table {
 	/*点線*/
 }
 
+.table2 {
+	margin-left: auto;
+	margin-right: auto;
+	background:#FEC18A;
+	border: dashed 2px #5b8bd0;
+}
+
 th,
 td {
 	padding: 10px 15px;
