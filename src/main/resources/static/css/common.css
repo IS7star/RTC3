@@ -202,8 +202,8 @@ h3{padding: 0.5em;
 	height: 100%;
 }
 
-.controlbox .button,
-.button-red {
+.controlbox .button
+ {
 	margin-top: 10px;
 	margin-right: 10px;
 }
