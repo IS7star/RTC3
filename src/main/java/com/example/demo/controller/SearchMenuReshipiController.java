@@ -146,7 +146,14 @@ public class SearchMenuReshipiController {
 		//mvを返す
 		return mv;
 	}
-	
+
+	/**
+	 * 取得したmenuCdをもとに対象となる献立情報詳細を表示するメソッド
+	 * 一押しレシピ画面用
+	 * @param menuCd
+	 * @param mv
+	 * @return 一押し献立画面
+	 */
 	
 	@GetMapping("/ShowRecommendReshipi")
 	public ModelAndView showRecommendReshipi(@RequestParam("menuCd") Integer menuCd,ModelAndView mv) {
