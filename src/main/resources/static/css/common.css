@@ -249,7 +249,21 @@ h3{padding: 0.5em;
 	-webkit-border-radius: 4px;
 	-webkit-user-select: none;
 }
-
+.button2{
+	background-color: #e74c3c;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 1.4;
+	padding: 10px 40px;
+	text-align: center;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+}
 .button:hover {
 	background-color: #647071;
 }
