@@ -23,7 +23,7 @@
 			<table class="table2">
 				<tr>
 					<th>レシピ名</th>
-					<td><input type="text" th:field="*{menuName}" class="width-middle">
+					<td><input type="text" th:field="*{menuName}" class="width-m"><br>
 						<font color="red"><span th:if="${#fields.hasErrors('menuName')}" th:errors="*{menuName}"></span>
 						</font>
 					</td>
@@ -68,21 +68,21 @@
 
 				<tr>
 					<th>画像名</th>
-					<td><input type="text" placeholder="(例)img/○○○.jpg" th:field="*{menuImg}" class="width-middle">
+					<td><input type="text" placeholder="(例)img/○○○.jpg" th:field="*{menuImg}" class="width-m"><br>
 						<font color="red"><span th:if="${#fields.hasErrors('menuImg')}" th:errors="*{menuImg}"></span>
 						</font>
 					</td>
 				</tr>
 				<tr>
 					<th>材料</th>
-					<td><textarea th:field="*{food}" rows="5" cols="22"></textarea>
+					<td><textarea th:field="*{food}" rows="5" cols="22" class="width-m"></textarea><br>
 						<font color="red"><span th:if="${#fields.hasErrors('food')}" th:errors="*{food}"></span>
 						</font>
 					</td>
 				</tr>
 				<tr>
 					<th>作り方</th>
-					<td><textarea th:field="*{cookMethod}" rows="5" cols="22"></textarea>
+					<td><textarea th:field="*{cookMethod}" rows="5" cols="22" class="width-m"></textarea><br>
 						<font color="red"><span th:if="${#fields.hasErrors('cookMethod')}"
 								th:errors="*{cookMethod}"></span>
 						</font>
@@ -90,21 +90,21 @@
 				</tr>
 				<tr>
 					<th>カロリー</th>
-					<td><input type="text" th:field="*{calorie}" class="width-middle">
+					<td><input type="text" th:field="*{calorie}" class="width-m"><br>
 						<font color="red"><span th:if="${#fields.hasErrors('calorie')}" th:errors="*{calorie}"></span>
 						</font>
 					</td>
 				</tr>
 				<tr>
 					<th>調理時間</th>
-					<td><input type="text" th:field="*{cookTime}" class="width-middle">
+					<td><input type="text" th:field="*{cookTime}" class="width-m"><br>
 						<font color="red"><span th:if="${#fields.hasErrors('cookTime')}" th:errors="*{cookTime}"></span>
 						</font>
 					</td>
 				</tr>
 				<tr>
 					<th>費用</th>
-					<td><input type="text" th:field="*{cost}" class="width-middle">
+					<td><input type="text" th:field="*{cost}" class="width-m"><br>
 						<font color="red"><span th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}"></span>
 						</font>
 					</td>
@@ -113,7 +113,7 @@
 
 			<div class="controlbox">
 				<input type="submit" value="確認" class="button-red">
-				<input type="reset" value="リセット">
+				<input type="reset" value="リセット" class="button-reset">
 			</div>
 
 		</form>
