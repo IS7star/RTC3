@@ -5,46 +5,104 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>献立一覧</title>
-	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<title>献立一覧</title>
 </head>
 
 <body>
-	<div style="text-align: right;">
-	<a  id="TOP" href="#" class="btn-sticky" onclick="history.back()">戻る</a>
+	<br>
+	<!--コンテナ-->
+	<div class="container">
+		<div style="text-align: right;">
+			<a id="TOP" href="#" class="btn-sticky" onclick="history.back()">戻る</a>
+		</div>
 
-	</div>
-	<div style="text-align: center;">
-		<h1 id=modoru>『<span th:text="${session.mood}"></span>』気分</h1>
-		<p>そんなあなたにおすすめな献立はこちら</p>
-		<div class="example">
-			<div class="table-responsive">
-				<div class="table-responsive-sm">
-					<div th:each="Reshipi:${session.menuInfo}">
-						<table class="table">
-							<tr>
-								<td th:text="${Reshipi.menuName}"></td>
-							</tr>
-							<td><img th:src="${Reshipi.menuImg}" width=250px height=250px>
-								<ul>
-									<li> 調理時間： <span th:text="${Reshipi.cookTime}"></span>分</li>
-									<li> カロリー： <span th:text="${Reshipi.calorie}"></span>kcal</li>
-									<li> 費　　用： <span th:text="${Reshipi.cost}"></span>円</li>
-								</ul>
-								<a th:href="@{'/ShowReshipiDetail?menuCd='+${Reshipi.menuCd}}">レシピはこちら</a><br>
-							</td>
-						</table>
-						<p></p>
+		<!--ヘッダ　献立提案サービス-->
+		<div style="text-align: center;">
+			<th:block th:if="${moodText} != null">
+				<h1 id=modoru>『<span th:text="${session.mood}"></span>』気分</h1>
+			</th:block>
+
+			<th:block th:if="${moodText} == null">
+
+				<th:block th:if="${session.emotionCd} == 1">
+					<h1>良い一日でしたね！ &#x1f60a;</h1>
+				</th:block>
+				<th:block th:if="${session.emotionCd} == 2">
+					<h1>元気出してね！ &#x1f606;</h1>
+				</th:block>
+				<th:block th:if="${session.emotionCd} == 3">
+					<h1>美味しい料理で良い一日を！ &#x1f604;</h1>
+				</th:block>
+				<th:block th:if="${session.emotionCd} == 4">
+					<h1>すごい一日だったね！ &#x1f609;</h1>
+				</th:block>
+			</th:block>
+
+			<div class="row">
+				<div class="top">
+					<h6>あなたにおすすめの献立はこちら</h6>
+					<br>
+				</div>
+			</div>
+
+
+			<!--機能が入る　タブで機能切り替え-->
+
+			<div class="container-fluid">
+				<div class="row">
+					<div class="center-div">
+						<div class="container-fluid">
+							<div class="row justify-content-center">
+								<div class="col-12 col-sm-6 col-md-4" th:each="Reshipi: ${session.menuInfo}">
+									<div class="d-flex flex-column">
+										<h6 id="favorite-icon" class=" bi-bookmark-star favorite-icon"
+											th:text="${Reshipi.menuName}"></h6>
+										<img th:src="${Reshipi.menuImg}" class="img-fluid thumbnail" />
+										<div class="d-sm-block d-md-none">
+											<p>調理時間：<span th:text="${Reshipi.cookTime}"></span>分</p>
+											<p>カロリー：<span th:text="${Reshipi.calorie}"></span>kcal</p>
+											<p>費用：<span th:text="${Reshipi.cost}"></span>円</p>
+										</div>
+										<div class="d-none d-md-block">
+											<p>調理時間：<span th:text="${Reshipi.cookTime}"></span>分</p>
+											<p>カロリー：<span th:text="${Reshipi.calorie}"></span>kcal</p>
+											<p>費用：<span th:text="${Reshipi.cost}"></span>円</p>
+										</div>
+										<a th:href="@{'/ShowReshipiDetail?menuCd=' + ${Reshipi.menuCd}}">レシピはこちら</a><br>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
-</script>
-		
-	</script>
-</body>
+	<div class="row">
+	<div class="bottom"></div>
+	</div>
 
+	</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+		crossorigin="anonymous"></script>
+	<script>
+document.addEventListener("DOMContentLoaded", function () {
+	var favoriteIcon = document.getElementById("favorite-icon");
+
+	favoriteIcon.addEventListener("click", function () {
+		favoriteIcon.classList.toggle("active");
+	});
+});
+</script>
+</body>
 </html>

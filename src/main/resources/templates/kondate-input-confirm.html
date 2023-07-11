@@ -12,13 +12,13 @@
 
 <body style="text-align: center;">
 	<h1>献立提案システム</h1>
-	<h2>料理　登録確認画面 </h2>
+	<h2>献立　登録確認画面 </h2>
 	<div>
-		<p>登録したい料理の情報を入力して下さい。</p>
+		<p>登録したいレシピの情報を入力して下さい。</p>
 		<form action="kondateInputComplete" method="post">
-			<table>
+			<table class="table2">
 				<tr>
-					<th>料理名</th>
+					<th>レシピ名</th>
 					<td><span th:text="${session.newReshipi.menuName}"></span></td>
 				</tr>
 
@@ -59,7 +59,7 @@
 			</table>
 			<div class="controlbox">
 				<input type="submit" value="登録" class="button-red">
-				<a href="index.html" class="button">メニューに戻る</a>
+				<a href="/admin" class="button">メニューに戻る</a>
 			</div>
 		</form>
 	</div>

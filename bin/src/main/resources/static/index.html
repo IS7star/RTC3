@@ -8,12 +8,52 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
 	<link rel="stylesheet" type="text/css" href="css/common.css">
 	<title>気分選択画面</title>
 </head>
 
 <body>
 <br>	
+
+<div id="navArea">
+	
+  <nav>
+    <div class="inner">
+      <ul>
+        <li><a href="#">東雲店ページ(Co-Unity)</a></li>
+        <li><a href="#">アプリケーション(∞Infinity∞)</a></li>
+        <li><a href="/ShowRecommendReshipi?menuCd=124">料理研究家(K・K)のイチオシレシピ</a></li>
+        <li><a href="/ShowRecommendReshipi?menuCd=125">料理研究家(T・M)のイチオシレシピ</a></li>
+        <li><a href="/ShowRecommendReshipi?menuCd=126">料理研究家(I・S)のイチオシレシピ</a></li>
+        <li><a href="/ShowRecommendReshipi?menuCd=127">料理研究家(T・H)のイチオシレシピ</a></li>
+        <li><a href="/ShowRecommendReshipi?menuCd=128">料理研究家(T・N)のイチオシレシピ</a></li>
+      </ul>
+      <table>
+		  <tr>
+		  <td>デジタルサイネージを下に表示</td>
+		  </tr><tr>
+		  <td>
+			<img src="../static/img/recipe.jpg" alt="デジタルサイネージ" >
+		  </td></tr>
+	  </table>
+    </div>
+  </nav>
+
+  <div class="toggle_btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div id="mask"></div>
+
+</div>
+
+
 	<div style="text-align: center;">
 		<h1>献立提案サービス</h1>
 		<div class="tab-wrap">
@@ -57,7 +97,6 @@
 								<a href="/SearchReshipi?moodCd=6" class="button" alt="ダイエットメニュー">
 									<span id="buttonImage6"></span></a>
 							</div>
-
 						</div>
 					</div>
 				</div>
@@ -114,9 +153,7 @@
 							</a>
 						</div>
 					</div>
-
 				</div>
-
 			</div>
 			<input id="tab02" type="radio" name="tab" class="tab-switch">
 			<label class="tab-label" for="tab02">感情分析で選ぶ</label>
@@ -124,7 +161,7 @@
 
 				<!--感情分析による献立提案-->
 				<h6>感情分析結果から<br>お勧めの献立をいくつか提案するよ</h6>
-				<input type="text/css" placeholder="例：551の豚まんがあるとき！”" class="form-control control" id="inputText"
+				<input type="text/css" placeholder="例：551の豚まんがあるとき！" class="form-control control" id="inputText"
 					maxlength="20" required autocomplete="off" /><br>
 				<button id="submit1" onclick="fetchData()" name="my_submit" class="my_submit_btn"
 					value="signup">送信</button>
@@ -139,9 +176,45 @@
 			</div>
 
 		</div>
+
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+	  </script>
+	  
+	  
+	  <script>
+  $(document).ready(function() {
+    $('#image-carousel').carousel({
+      interval: 150, // スライドの間隔（ミリ秒）
+      swipe: 50 // スワイプの速度（ピクセル/秒）
+    });
+  });
+</script>
 		<script>
+			//ナビゲーション
+		(function($) {
+			var $nav   = $('#navArea');
+			var $btn   = $('.toggle_btn');
+			var $mask  = $('#mask');
+			var open   = 'open'; // class
+			// menu open close
+			$btn.on( 'click', function() {
+				if ( ! $nav.hasClass( open ) ) {
+					$nav.addClass( open );
+					} else {
+						$nav.removeClass( open );
+						}
+				});
+			// mask close
+			$mask.on('click', function() {
+			$nav.removeClass( open );
+			});
+		} )(jQuery);
+		
+
+		
 			//必須入力チェック処理
 			const inputText = document.getElementById("inputText")
 			const button = document.getElementById("submit1")
