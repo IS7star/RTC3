@@ -4,8 +4,8 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 /**
- * 献立情報削除に対応するフォームです。
- * @author sakurai
+ * 献立情報削除に対応するフォーム
+ * @author 櫻井樹
  * @version 1.0
  */
 

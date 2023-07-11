@@ -8,6 +8,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
+/**
+ * 献立テーブル・献立削除機能のためのエンティティクラス
+ * @author 櫻井樹
+ * @version 1.0
+ */
+
 @Entity
 @Table(name = "T_RESHIPI")
 @Data
