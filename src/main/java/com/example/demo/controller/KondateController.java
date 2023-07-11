@@ -63,7 +63,7 @@ public class KondateController {
 		return "kondate-update";
 	}
 
-	@GetMapping("/admin")
+	@GetMapping("/admin-menu")
 	public String kondateAdministrator(KondateUpdateForm kondateUpdateForm) {
 		//次画面（"kondate-administrator"）に遷移する
 		return "kondate-administrator";
@@ -102,12 +102,12 @@ public class KondateController {
 			//newReshipiを、"newReshipi"キーのセッションに格納
 			session.setAttribute("newReshipi", newReshipi);
 
-			//次画面("kondate-input-confirm")に遷移する
-			return "kondate-input-confirm";
+			//次画面("kondate-register-confirm")に遷移する
+			return "kondate-register-confirm";
 		} else {
 			//resultが空である場合
-			//次画面("kondate-input")に遷移する
-			return "kondate-input";
+			//次画面("kondate-register")に遷移する
+			return "kondate-register";
 		}
 	}
 
@@ -157,8 +157,8 @@ public class KondateController {
 		session.removeAttribute("mood");
 		session.removeAttribute("emotion");
 
-		//次画面のURL("kondate-input-complete")をセットする
-		mv.setViewName("kondate-input-complete");
+		//次画面のURL("kondate-register-complete")をセットする
+		mv.setViewName("kondate-register-complete");
 		//mvを返す
 		return mv;
 	}
