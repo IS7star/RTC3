@@ -163,6 +163,7 @@ public class KondateController {
 		return mv;
 	}
 
+
 	/**
 	 * 更新画面で入力された値をデータベースで更新するするためのメソッド
 	 * @param KondateUpdate
