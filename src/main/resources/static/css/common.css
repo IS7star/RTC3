@@ -872,15 +872,18 @@ button#submit2.is-active {
 	margin-left: 10px;
 }
 .thumbnail {
-    display: inline-block;
-    height: 300px;
-    margin-right: 15px;
-    margin-bottom: 15px;
+    display: inline-block; 
+    width: 1000px;
+	height: auto;
+	object-fit: cover;
+	aspect-ratio: 2 / 1.35;
 }
 .thumbnail img {
-	height: 100%;
+    width: 1000px;
+	height: auto;
+	object-fit: cover;
+	aspect-ratio: 2 / 1.35;
 }
-
 .favorite-icon {
 	cursor: pointer;
 	left: 10px;
