@@ -202,11 +202,11 @@ h3{padding: 0.5em;
 	height: 100%;
 }
 
-/*.controlbox .button,*/
-/*.button-red {*/
-/*	margin-top: 10px;*/
-/*	margin-right: 10px;*/
-/*}*/
+.controlbox .button,
+.button-red {
+	margin-top: 10px;
+	margin-right: 10px;
+}
 
 
 .button {
