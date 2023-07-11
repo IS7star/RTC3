@@ -21,7 +21,7 @@
     </div>
 
     <div style="text-align: center;">
-        <h1><span th:text="${Reshipi.menuName}"></span></h1>
+        <h1><img src="../img/spoon.png"><span th:text="${Reshipi.menuName}"></span></h1>
         <p></p>
         <table>
             <tr>
@@ -30,10 +30,10 @@
             <td><img class="responsive-image" th:src="${Reshipi.menuImg}" width=600px height=400px></td>
         </table>
     </div>
-    <h2>材料名</h2>
+    <h2　class="zairyo">材料名</h2>
     <p><span th:utext="${Reshipi.food.replace('\n', '<br>')}"></span></p>
 
-    <h2>作り方</h2>
+    <h2　class="zairyo">作り方</h2>
     <p><span th:utext="${Reshipi.cookMethod.replace('\n', '<br>')}"></span></p>
     <br>
     <br>
