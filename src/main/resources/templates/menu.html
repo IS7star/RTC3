@@ -23,7 +23,7 @@
 		<!--ヘッダ　献立提案サービス-->
 		<div style="text-align: center;">
 			<th:block th:if="${moodText} != null">
-				<h1 id=modoru>『<span th:text="${session.mood}"></span>』気分</h1>
+				<h1><img src="../img/spoon.png">『<span th:text="${session.mood}"></span>』気分</h1>
 			</th:block>
 
 			<th:block th:if="${moodText} == null">
