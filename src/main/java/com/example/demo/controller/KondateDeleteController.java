@@ -35,7 +35,7 @@ public class KondateDeleteController {
 	 * @return 献立削除検索画面への遷移
 	 */
 
-	@GetMapping("/EZcs2XdFBSyfsnI5Vf1wWarVgHF0qEsFfQtLD3OdMavFC6PKeH123789")
+	@GetMapping("/delete")
 	public ModelAndView kondateDeleteInput(ModelAndView mv, KondateDeleteForm kondateDeleteForm) {
 		//次画面のURL("kondate-delete")をセット
 		mv.setViewName("kondate-delete");
