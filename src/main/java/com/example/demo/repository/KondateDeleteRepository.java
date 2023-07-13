@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.example.demo.entity.ReshipiDelete;
 
@@ -23,8 +24,8 @@ public interface KondateDeleteRepository extends JpaRepository<ReshipiDelete, In
 	
 	@Query(value = "SELECT * "
 			+ " FROM T_RESHIPI "
-			+ " WHERE menu_name=:menuName", nativeQuery = true)
-	List<ReshipiDelete> checkReshipiByMenuName(String menuName);
+			+ " WHERE menu_name LIKE %:menuName%", nativeQuery = true)
+	List<ReshipiDelete> checkReshipiByMenuName(@Param("menuName") String menuName);
 	
 	/**
 	 * 入力された献立名に対応する、献立一覧を取得、表示するための処理
@@ -34,8 +35,8 @@ public interface KondateDeleteRepository extends JpaRepository<ReshipiDelete, In
 	
 	@Query(value = "SELECT * "
 			+ " FROM T_RESHIPI "
-			+ " WHERE menu_name=:menuName", nativeQuery = true)
-	List<ReshipiDelete> findByMenuName(String menuName);
+			+ " WHERE menu_name LIKE %:menuName%", nativeQuery = true)
+	List<ReshipiDelete> findByMenuName(@Param("menuName") String menuName);
 	
 	/**
 	 * 選択された献立に対して、その献立・列を削除するための処理
