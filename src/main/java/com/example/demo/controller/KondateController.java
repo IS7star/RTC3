@@ -201,7 +201,7 @@ public class KondateController {
 		} else {
 			//resultが空である場合
 			//次画面("kondate-update-input")に遷移する
-			return "kondate-update-input";
+			return "kondate-update";
 		}
 
 	}

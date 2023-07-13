@@ -26,21 +26,21 @@
 			<table class="table2">
 				<tr>
 					<th>メニュー番号</th>
-					<td><input type="text" name="menuCd" th:field="*{menuCd}" class="width-m">
+					<td><input type="text" name="menuCd" th:field="*{menuCd}" class="width-m"><br>
 						<font color="red"><span th:if="${#fields.hasErrors('menuCd')}" th:errors="*{menuCd}"></span>
 						</font>
 					</td>
 				</tr>
 				<tr>
 					<th>更新するメニュー名</th>
-					<td><input type="text" name="menuName" th:field="*{menuName}" class="width-m">
+					<td><input type="text" name="menuName" th:field="*{menuName}" class="width-m"><br>
 						<font color="red"><span th:if="${#fields.hasErrors('menuName')}" th:errors="*{menuName}"></span>
 						</font>
 					</td>
 				</tr>
 				<tr>
 					<th>更新する画像名</th>
-					<td><input type="text" name="menuImg" th:field="*{menuImg}" class="width-m">
+					<td><input type="text" name="menuImg" th:field="*{menuImg}" class="width-m"><br>
 						<font color="red"><span th:if="${#fields.hasErrors('menuImg')}" th:errors="*{menuImg}"></span>
 						</font>
 					</td>
